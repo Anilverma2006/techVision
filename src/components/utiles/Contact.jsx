@@ -16,28 +16,28 @@ const Contatct = () => {
     const [isProcess, setisProcess] = useState(null)
     const [update, setupdate] = useState("dsjhfu dufhurfn dfhr fgnfroigr")
 
-    const sendMail = async () => {
-        console.log("form submited")
-        setisProcess(true)
-        const res = await fetch(`${backendUrl}/contact/sendmail`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                content,
-                subject: mailSubject,
-                usermail
-            })
-        })
-        const data = await res.json()
-        setisProcess(false)
-        if (data.result) {
-            setupdate("Mail send successfully")
-        } else {
-            setupdate("Some internal error ocured , Please try again")
-        }
-    }
+    // const sendMail = async () => {
+    //     console.log("form submited")
+    //     setisProcess(true)
+    //     const res = await fetch(`${backendUrl}/contact/sendmail`, {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //         },
+    //         body: JSON.stringify({
+    //             content,
+    //             subject: mailSubject,
+    //             usermail
+    //         })
+    //     })
+    //     const data = await res.json()
+    //     setisProcess(false)
+    //     if (data.result) {
+    //         setupdate("Mail send successfully")
+    //     } else {
+    //         setupdate("Some internal error ocured , Please try again")
+    //     }
+    // }
 
     return (
 
@@ -56,7 +56,7 @@ const Contatct = () => {
                 }}>
                     <form className=' relative p-2 z-10 rounded-4' onSubmit={(e) => {
                         e.preventDefault()
-                        sendMail()
+                        // sendMail()
                     }}>
                         <div className=' mx-auto formContent' >
                             <div className="enterGmail w-full my-1">
